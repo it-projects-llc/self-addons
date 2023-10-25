@@ -10,4 +10,9 @@
     ],
     "data": [],
     "demo": [],
+    "assets": {
+        "web.assets_backend": [
+            "itpp_mail/static/src/models/*/*.js",
+        ],
+    },
 }
