@@ -4,6 +4,8 @@
 
 * Adds sound notification, when new message received in inbox (feature from Odoo 8.0, see `docs <doc/index.rst>`__ for configuration)
 
+* Internal note is marked as red
+
 Credits
 =======
 
