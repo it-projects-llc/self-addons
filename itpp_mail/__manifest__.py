@@ -13,6 +13,7 @@
     "assets": {
         "web.assets_backend": [
             "itpp_mail/static/src/models/*/*.js",
+            "itpp_mail/static/src/components/*/*.scss",
         ],
     },
 }

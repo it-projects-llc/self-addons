@@ -1,0 +1,10 @@
+.o_Message {
+    &.o-not-discussion {
+        border: 1px solid red;
+        background-color: #ffdee5;
+
+        &.o_Message_active {
+            background-color: #ffaaaa;
+        }
+    }
+}
