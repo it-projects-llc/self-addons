@@ -1,5 +1,5 @@
 ===================================
- Calendar Meeting URL Autogenerate 
+ Calendar Meeting URL Autogenerate
 ===================================
 
 Installation
