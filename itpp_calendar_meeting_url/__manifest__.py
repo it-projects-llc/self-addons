@@ -12,20 +12,16 @@
 
     "author": "IT-Projects LLC, Ilmir Karamov",
     "support": "apps@it-projects.info",
-    "website": "https://www.it-projects.info",
+    "website": "https://github.com/it-projects-llc/self-addons",
     "license": "AGPL-3",
 
     "depends": [
-        'calendar',
+        "calendar",
     ],
     "external_dependencies": {"python": [], "bin": []},
-    "data": [
-    #    'security/ir.model.access.csv',
-    ],
-    "demo": [
-    ],
-    "qweb": [
-    ],
+    "data": [],
+    "demo": [],
+    "qweb": [],
 
     "post_load": None,
     "pre_init_hook": None,
