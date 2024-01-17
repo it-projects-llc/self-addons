@@ -9,12 +9,10 @@
     "images": [],
     "version": "15.0.1.0.0",
     "application": False,
-
     "author": "IT-Projects LLC, Ilmir Karamov",
     "support": "apps@it-projects.info",
     "website": "https://github.com/it-projects-llc/self-addons",
     "license": "AGPL-3",
-
     "depends": [
         "calendar",
     ],
@@ -22,12 +20,10 @@
     "data": [],
     "demo": [],
     "qweb": [],
-
     "post_load": None,
     "pre_init_hook": None,
     "post_init_hook": None,
     "uninstall_hook": None,
-
     "auto_install": False,
     "installable": True,
 }
