@@ -11,7 +11,7 @@ class Calendar(models.Model):
     @api.depends("start")
     def _compute_meeting_url(self):
         for rec in self:
-            rec.date_combination = rec.start.astimezone(
+            date_combination = rec.start.astimezone(
                 tz=pytz.timezone("Asia/Yekaterinburg")
             ).strftime(
                 "%Y%m%d"
@@ -19,5 +19,5 @@ class Calendar(models.Model):
             # list of timezones:
             # https://gist.github.com/heyalexej/8bf688fd67d7199be4a1682b3eec7568
             rec.videocall_location = (
-                "https://meet.jit.si/discussion_%s" % rec.date_combination
+                "https://meet.jit.si/discussion_%s" % date_combination
             )
