@@ -2,12 +2,12 @@
  Discuss modifications for IT-Projects LLC
 ===========================================
 
-Audio notifiaction
+Audio notification
 ------------------
 
-In order for audio playback to work correctly in Chromium-based browsers, user needs to do followings steps:
+In order for audio playback to work correctly in Chromium-based browsers, the user needs to follow these steps:
 
-- Navigate to Odoo instance
+- Navigate to the Odoo instance
 
 - Click on "View site information"
 
@@ -17,6 +17,6 @@ In order for audio playback to work correctly in Chromium-based browsers, user n
 
 .. image:: chrome2.png
 
-- In "Privacy and security" section enable "Sound" permission
+- In the "Privacy and security" section, enable the "Sound" permission
 
 .. image:: chrome3.png
