@@ -1,0 +1,12 @@
+<odoo>
+    <record id="res_partner_form_telegram" model="ir.ui.view">
+        <field name="name">res.partner.form.telegram</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="mobile" position="after">
+                <field name="telegram_id"/>
+            </field>
+        </field>
+    </record>
+</odoo>

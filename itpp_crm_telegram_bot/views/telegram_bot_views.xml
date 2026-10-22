@@ -1,0 +1,101 @@
+<odoo>
+    <record id="telegram_bot_tree" model="ir.ui.view">
+        <field name="name">crm.telegram.bot.tree</field>
+        <field name="model">crm.telegram.bot</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="team_id"/>
+                <field name="collection_minutes"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+    <record id="telegram_bot_form" model="ir.ui.view">
+        <field name="name">crm.telegram.bot.form</field>
+        <field name="model">crm.telegram.bot</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_register_webhook" type="object" string="Register webhook" class="oe_highlight" groups="base.group_system"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                        <field name="team_id"/>
+                        <field name="collection_minutes"/>
+                        <field name="token" password="True" groups="base.group_system"/>
+                        <field name="webhook_url" widget="url" groups="base.group_system"/>
+                        <field name="webhook_secret" password="True" groups="base.group_system"/>
+                    </group>
+                    <div class="alert alert-info">The scheduler runs every minute. Public chatter messages are relayed to Telegram; internal notes remain private. Telegram-supported formatting is preserved; unsupported rich text formatting is removed.</div>
+                    <notebook>
+                        <page string="Welcome">
+                            <group>
+                                <field name="welcome_en"/>
+                                <field name="welcome_ru"/>
+                            </group>
+                        </page>
+                        <page string="Thank you">
+                            <group>
+                                <field name="thanks_en"/>
+                                <field name="thanks_ru"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="telegram_bot_action" model="ir.actions.act_window">
+        <field name="name">Telegram Bots</field>
+        <field name="res_model">crm.telegram.bot</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="telegram_outbox_action" model="ir.actions.act_window">
+        <field name="name">Telegram Deliveries</field>
+        <field name="res_model">crm.telegram.outbox</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="telegram_inbox_action" model="ir.actions.act_window">
+        <field name="name">Telegram Incoming Updates</field>
+        <field name="res_model">crm.telegram.inbox</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="telegram_outbox_tree" model="ir.ui.view">
+        <field name="name">crm.telegram.outbox.tree</field>
+        <field name="model">crm.telegram.outbox</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" delete="false">
+                <field name="create_date"/>
+                <field name="bot_id"/>
+                <field name="chat_id"/>
+                <field name="method"/>
+                <field name="sent"/>
+                <field name="attempts"/>
+                <field name="next_attempt"/>
+                <field name="error"/>
+            </tree>
+        </field>
+    </record>
+    <record id="telegram_inbox_tree" model="ir.ui.view">
+        <field name="name">crm.telegram.inbox.tree</field>
+        <field name="model">crm.telegram.inbox</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" delete="false">
+                <field name="create_date"/>
+                <field name="bot_id"/>
+                <field name="update_id"/>
+                <field name="processed"/>
+                <field name="conversation_id"/>
+                <field name="error"/>
+            </tree>
+        </field>
+    </record>
+    <menuitem id="telegram_config_menu" name="Telegram" parent="crm.crm_menu_config" sequence="60" groups="base.group_system"/>
+    <menuitem id="telegram_bots_menu" name="Bots" parent="telegram_config_menu" action="telegram_bot_action"/>
+    <menuitem id="telegram_inbox_menu" name="Incoming Updates" parent="telegram_config_menu" action="telegram_inbox_action"/>
+    <menuitem id="telegram_outbox_menu" name="Deliveries" parent="telegram_config_menu" action="telegram_outbox_action"/>
+</odoo>

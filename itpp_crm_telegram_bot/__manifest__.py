@@ -1,0 +1,20 @@
+{
+    "name": "CRM Telegram Bot",
+    "summary": "Collect Telegram enquiries into CRM leads and reply from chatter",
+    "version": "15.0.1.0.0",
+    "category": "Sales/CRM",
+    "author": "IT-Projects LLC",
+    "website": "https://github.com/it-projects-llc/self-addons",
+    "license": "AGPL-3",
+    "depends": ["crm"],
+    "external_dependencies": {"python": ["requests"]},
+    "data": [
+        "security/ir.model.access.csv",
+        "security/rules.xml",
+        "views/telegram_bot_views.xml",
+        "views/res_partner_views.xml",
+        "data/ir_cron.xml",
+    ],
+    "post_load": "post_load",
+    "installable": True,
+}

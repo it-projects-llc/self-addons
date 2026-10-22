@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_telegram_bot_admin,telegram.bot.admin,model_crm_telegram_bot,base.group_system,1,1,1,1
+access_telegram_conversation_admin,telegram.conversation.admin,model_crm_telegram_conversation,base.group_system,1,0,0,0
+access_telegram_inbox_admin,telegram.inbox.admin,model_crm_telegram_inbox,base.group_system,1,0,0,0
+access_telegram_outbox_admin,telegram.outbox.admin,model_crm_telegram_outbox,base.group_system,1,0,0,0
