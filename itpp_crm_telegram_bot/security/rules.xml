@@ -1,0 +1,22 @@
+<odoo>
+    <record id="telegram_bot_company_rule" model="ir.rule">
+        <field name="name">Telegram bots: allowed companies</field>
+        <field name="model_id" ref="model_crm_telegram_bot"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="telegram_conversation_company_rule" model="ir.rule">
+        <field name="name">Telegram conversations: allowed companies</field>
+        <field name="model_id" ref="model_crm_telegram_conversation"/>
+        <field name="domain_force">[('bot_id.company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="telegram_inbox_company_rule" model="ir.rule">
+        <field name="name">Telegram updates: allowed companies</field>
+        <field name="model_id" ref="model_crm_telegram_inbox"/>
+        <field name="domain_force">[('bot_id.company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="telegram_outbox_company_rule" model="ir.rule">
+        <field name="name">Telegram deliveries: allowed companies</field>
+        <field name="model_id" ref="model_crm_telegram_outbox"/>
+        <field name="domain_force">[('bot_id.company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>
